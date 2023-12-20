@@ -18,7 +18,7 @@ class SocketService{
         console.log("Init socket listeners");
         const io = this._io;    
         io.on("connect", (socket) => {
-            console.log('new Socket Connection');
+            console.log('new Socket Connection',socket.id);
 
            socket.on('event:message',async ({message}:{message:string })=>{
             console.log("New message Rec",message)
